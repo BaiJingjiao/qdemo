@@ -11,13 +11,16 @@ var outputFile_2 = 'output_2.txt';
 var output_2 = writeLine(outputFile_2, { cacheLines : 1000});
 
 var q1 = Q.fcall(function() {
-	readLine(inputFile_1).go(function(data, next){
+	var r1 = readLine(inputFile_1);
+
+	r1.on('error', function(err) {
+		console.log('error happened: ' + err);
+	});
+
+	r1.go(function(data, next) {
 		console.log('data1: ' + data);
 		output_1.write(data, next);
-	}, function(err) {
-		if(err) {
-			console.log(err);
-		}
+	}, function() {
 		console.log('inputFile_1 end.');
 		output_1.write('add one line for file_1');
 		output_1.end(function(){
@@ -26,14 +29,17 @@ var q1 = Q.fcall(function() {
 	});
 });
 
-Q.all([q1]).then(function() {
-	readLine(inputFile_2).go(function(data, next){
-		console.log('data2: ' + data);
+Q.all([q1]).then(function(){
+	var r2 = readLine(inputFile_2);
+
+	r2.on('error', function(err) {
+		console.log('error happened: ' + err);
+	});
+
+	r2.go(function(data, next) {
+		console.log('data1: ' + data);
 		output_2.write(data, next);
-	}, function(err) {
-		if(err) {
-			console.log(err);
-		}
+	}, function() {
 		console.log('inputFile_2 end.');
 		output_2.write('add one line for file_2');
 		output_2.end(function(){
