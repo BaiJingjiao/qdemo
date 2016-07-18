@@ -1,11 +1,11 @@
 var jsdom = require("jsdom");
+var window = jsdom.jsdom().defaultView;
 var fs = require("fs");
-// var jquery = require("jquery");
-var jquery = fs.readFileSync("./node_modules/jquery/src/jquery.js", "utf-8");
+var jq = fs.readFileSync("./node_modules/jquery/src/jquery.js", "utf-8");
 
 jsdom.env({
   url: "my.html",
-  src: [jquery],
+  src: [jq],
   done: function (err, window) {
     var $ = window.$;
     console.log("HN Links");

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Matrixcare Test Result</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link href="mcr.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="mcr.js"></script>
+</head>
+<body>
+	<div id="meta">
+		<span id="timeInfo"></span>
+		<br>
+		<span id="sysInfo"></span>
+		<br><br>
+		<span id="passrate"></span>
+		<br>
+	</div>
+	<p></p>
+	<h1>Matrixcare Automation Test Report</h1>
+	
+<div class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a id="failedli" href="#tab1">Failed</a></li>
+        <li><a id="skippedli" href="#tab2">Skipped</a></li>
+        <li><a id="passedli" href="#tab3">Passed</a></li>
+        <li><a id="allli" href="#tab4">All</a></li>
+    </ul>
+ 
+    <div class="tab-content">
+    	<div id="tab1" class="tab active">
+        	<iframe id="iframe-failed" src="MatrixCare_Automation_Test_Failed.html"></iframe>
+    	</div>
+ 
+        <div id="tab2" class="tab">
+        <!-- 
+        onLoad="setIframeHeight(this.id)" scrolling="yes" frameborder="0"*
+        --> 
+        	<iframe id="iframe-skipped" src="MatrixCare_Automation_Test_Skipped.html"></iframe>
+        </div>
+ 
+        <div id="tab3" class="tab">
+        	<iframe id="iframe-passed" src="MatrixCare_Automation_Test_Passed.html"></iframe>
+        </div>
+ 
+        <div id="tab4" class="tab">
+        	<iframe id="iframe-all" src="MatrixCare_Automation_Test_AllCases.html"></iframe>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
