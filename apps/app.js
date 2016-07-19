@@ -32,8 +32,8 @@ let cp = require('child_process');
 
 process.chdir(__dirname + '/../');
 console.log(process.cwd());
-console.log('running cmd: ' + cmd);
 let cmd = process.platform === 'win32' ? 'http-server.cmd' : 'http-server';
+console.log('running cmd: ' + cmd);
 let server = cp.spawn('http-server', ['-p9999']);
 
 server.stdout.on('data', function (data) {
