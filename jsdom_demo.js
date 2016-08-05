@@ -1,3 +1,4 @@
+/*不工作*/
 var jsdom = require("jsdom");
 var window = jsdom.jsdom().defaultView;
 var fs = require("fs");

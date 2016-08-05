@@ -9,3 +9,9 @@ let $ = cheerio.load(html);
 
 $('#skippedli').text('skipped(100)');
 console.log($.html());
+
+let str = $.html();
+fs.writeFileSync('my.html', str, 'utf-8', (err) => {
+  if(err) throw err;
+  console.log('writing my.html end.');
+});
